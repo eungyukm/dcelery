@@ -1,0 +1,14 @@
+services:
+  django:
+    container_name: django
+    build:
+      context: ./decelery
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./decelery:/app
+    ports:
+      - 8001:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY="<D30>]K6ZV];_-=~#6.8uUq_jMR?=T"
+      - ALLOWED_HOSTS=localhost,127.0.0.1
